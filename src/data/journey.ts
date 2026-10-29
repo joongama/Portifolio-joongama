@@ -35,8 +35,7 @@ export const journey: JourneyItem[] = [
     ],
   },
   {
-    // TODO: informe o mês/ano do workshop
-    period: null,
+    period: "Set 2025 – Dez 2025",
     title: "Workshop Apple Developer Academy",
     place: "Apple Developer Academy | Senac",
     kind: "curso",
