@@ -33,7 +33,7 @@ export const facts: { term: string; detail: string }[] = [
   { term: "Trabalho atual", detail: "Jovem Aprendiz no estoque da Caraigá Veículos, desde setembro de 2025." },
   { term: "Busco", detail: "Estágio em Análise de Dados ou BI. Também tenho interesse em desenvolvimento e outras vagas de entrada em TI." },
   { term: "Idiomas", detail: "Inglês intermediário, espanhol básico." },
-  { term: "Disponibilidade", detail: "Presencial em São Paulo, com fácil acesso à Zona Oeste." },
+  { term: "Disponibilidade", detail: "São Paulo - SP" },
 ];
 
 export const learningNow = [
