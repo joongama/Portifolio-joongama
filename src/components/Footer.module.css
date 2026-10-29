@@ -1,0 +1,15 @@
+.footer {
+  padding-block: 32px;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 32px;
+}
+.colophon {
+  max-width: 60ch;
+}

@@ -1,0 +1,306 @@
+.panel {
+  height: 100%;
+  min-height: 280px;
+  padding: 22px;
+  border-radius: var(--radius-m);
+  background: var(--surface-2);
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.caption {
+  font-size: 0.8rem;
+  font-weight: 650;
+  font-stretch: var(--narrow);
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------- Fluxo */
+.flow {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+.node {
+  display: grid;
+  gap: 2px;
+  padding: 14px 16px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-s);
+  background: var(--surface);
+}
+.nodeEnd {
+  background: var(--tag);
+  color: var(--tag-ink);
+  border-color: var(--tag-ink);
+}
+.nodeEnd .nodeNote {
+  color: var(--tag-muted);
+}
+.nodeTitle {
+  font-weight: 750;
+  font-stretch: var(--wide);
+}
+.nodeNote {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.alert {
+  justify-self: start;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  background: #b42318;
+  color: #fff;
+}
+.edge {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 0 8px 28px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.edge::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid var(--ink);
+}
+.edge::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  bottom: 0;
+  border: 6px solid transparent;
+  border-top: 7px solid var(--ink);
+  border-bottom: 0;
+}
+.edgeForward {
+  align-self: center;
+}
+.edgeBack {
+  align-self: center;
+  padding-left: 18px;
+  position: relative;
+  color: var(--ink);
+  font-weight: 600;
+}
+.edgeBack::before {
+  content: "↺";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------- Console */
+.console {
+  background: #18212b;
+  color: #e8ecef;
+}
+.console .caption {
+  color: #a2adb8;
+}
+:root[data-theme="dark"] .console {
+  background: #0f151c;
+}
+.routes {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+}
+.routes td {
+  padding: 9px 6px;
+  border-top: 1px solid #2f3a46;
+  vertical-align: middle;
+}
+.routes tr:first-child td {
+  border-top: 0;
+}
+.method {
+  display: inline-block;
+  min-width: 58px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-align: center;
+  color: #18212b;
+  background: #8da8ff;
+}
+.method[data-method="POST"] {
+  background: #7ee2a8;
+}
+.method[data-method="PUT"] {
+  background: #ffd23f;
+}
+.method[data-method="DELETE"] {
+  background: #ff9f8f;
+}
+.path {
+  word-break: break-all;
+}
+.statusCode {
+  text-align: right;
+  color: #a2adb8;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------ Grimório */
+.grimoire {
+  gap: 10px;
+}
+.stats {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  font-weight: 600;
+}
+.statValue {
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+}
+.bar {
+  grid-column: 1 / -1;
+  height: 10px;
+  border-radius: 99px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.bar span[data-kind="hp"] {
+  background: #c2410c;
+}
+.bar span[data-kind="mp"] {
+  background: #4f46e5;
+}
+.spells {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.spells li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-s);
+  background: var(--surface);
+  font-weight: 650;
+}
+.glyph {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+[data-el="fire"] .glyph {
+  background: #c2410c;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+[data-el="water"] .glyph {
+  background: #0369a1;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+[data-el="earth"] .glyph {
+  background: #4d7c0f;
+}
+[data-el="wind"] .glyph {
+  border: 3px solid #64748b;
+  border-radius: 50%;
+}
+.enemies {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto;
+  align-items: center;
+  gap: 0;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+.enemies li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+}
+.enemies li::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  flex: none;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--surface);
+}
+.enemies li:empty {
+  justify-content: center;
+  background: linear-gradient(var(--muted), var(--muted)) center / 100% 2px no-repeat;
+}
+.enemies li:first-child {
+  padding-right: 8px;
+}
+.enemies li:last-child {
+  flex-direction: row-reverse;
+  padding-left: 8px;
+}
+.enemies li:last-child::before {
+  background: var(--ink);
+}
+
+/* ---------------------------------------------------- Planejado */
+.planned {
+  min-height: 0;
+  align-content: center;
+}
+.pipe {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.pipe li {
+  padding: 10px 14px;
+  border-radius: var(--radius-s);
+  background: var(--surface);
+  font-weight: 700;
+  font-stretch: 105%;
+}
+.pipe li + li::before {
+  content: "";
+}
+.pipe li:not(:last-child) {
+  position: relative;
+  margin-right: 22px;
+}
+.pipe li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  width: 18px;
+  border-top: 2px solid var(--muted);
+}

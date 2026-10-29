@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joongama.github.io/Portifolio-joongama/sitemap.xml
